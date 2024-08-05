@@ -1,6 +1,7 @@
 ## if you want to run app then you make to step by step below
-#### clone and cd
-git clone https://github.com/quyencanh203/todolist.git
+#### clone
+git clone https://github.com/quyencanh203/todolist.git 
+####  cd app
 cd todolist
 #### run docker compose up 
 docker compose up
@@ -11,13 +12,12 @@ docker exec -it todolist-web-1 bash -c "python manage.py createsuperuser --usern
 #### connect to phpmyadmin
 docker run -d --name myphpmyadmin -e PMA_HOST=db -e PMA_PORT=3306 -e PMA_USER=your_username -e PMA_PASSWORD=your_password -p 8080:80 --network todolist_default phpmyadmin/phpmyadmin
 <ul>
-<li>Line 1</li>
-<li>Line 2</li>
+<li>[todo](http://localhost:8000/todo/)</li>
+<li>[diabetes](http://localhost:8000/diabetes/)</li>
+<li>[phpmyadmin][(http://localhost:8000/diabetes/)](http://localhost:8080/index.php?route=/sql&pos=0&db=todolist&table=todo_task)</li>
+<li>[django admin][(http://localhost:8000/diabetes/)](http://localhost:8000/admin/login/?next=/admin/)</li>
 </ul>
-http://localhost:8000/todo/
-http://localhost:8000/diabetes/
-http://localhost:8080/index.php?route=/sql&pos=0&db=todolist&table=todo_task
-http://localhost:8000/admin/login/?next=/admin/
+
 ## --------------------note for command--------------------------
 ## Build a container from Dockerfile
 docker build -t todolist .
