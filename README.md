@@ -1,12 +1,20 @@
 ## if you want to run app then you make to step by step below
-#### change struction of database default
-python manage.py migrate
+#### clone and cd
+git clone https://github.com/quyencanh203/todolist.git
+cd todolist
+#### run docker compose up 
+docker compose up
+#### open new terminal and change struction of database default
+docker exec -it todolist-web-1 bash -c "python manage.py migrate"
 #### make user of database
-python manage.py createsuperuser --username=username --email=email
+docker exec -it todolist-web-1 bash -c "python manage.py createsuperuser --username=username --email=email"
 #### connect to phpmyadmin
 docker run -d --name myphpmyadmin -e PMA_HOST=db -e PMA_PORT=3306 -e PMA_USER=your_username -e PMA_PASSWORD=your_password -p 8080:80 --network todolist_default phpmyadmin/phpmyadmin
-#### make database
-copy todo_task.sql and paste into http://localhost:8080/index.php?route=/table/sql&db=todolist&table=todo_task then run 
+
+http://localhost:8000/todo/
+http://localhost:8000/diabetes/
+http://localhost:8080/index.php?route=/sql&pos=0&db=todolist&table=todo_task
+http://localhost:8000/admin/login/?next=/admin/
 ## --------------------note for command--------------------------
 ## Build a container from Dockerfile
 docker build -t todolist .
