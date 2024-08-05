@@ -10,7 +10,10 @@ docker exec -it todolist-web-1 bash -c "python manage.py migrate"
 docker exec -it todolist-web-1 bash -c "python manage.py createsuperuser --username=username --email=email"
 #### connect to phpmyadmin
 docker run -d --name myphpmyadmin -e PMA_HOST=db -e PMA_PORT=3306 -e PMA_USER=your_username -e PMA_PASSWORD=your_password -p 8080:80 --network todolist_default phpmyadmin/phpmyadmin
-
+<ul>
+<li>Line 1</li>
+<li>Line 2</li>
+</ul>
 http://localhost:8000/todo/
 http://localhost:8000/diabetes/
 http://localhost:8080/index.php?route=/sql&pos=0&db=todolist&table=todo_task
