@@ -1,0 +1,13 @@
+<html>
+    <a href="/todo"> << go back </a>
+<form 
+    method="post" action="{% url 'update' task.id %}">
+    {% csrf_token %}
+    <h1>{{task.title}}</h1>
+    <p>{{task.description}}</p>
+    <p>{{task.due_date}}</p>
+    <input type="checkbox" {%if task.done %} checked {%endif%} name="done" id="done">
+    <br>
+    <input type="submit" value="Update">
+</form>
+</html>

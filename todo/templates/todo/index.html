@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <ul>
+    {% for task in tasks %}
+    <li>
+        <input class="nochange" type="checkbox" {%if task.done %} checked {%endif%}>
+        <a href="/todo/detail/{{task.id}}">{{task.title}}</a>: {{task.description}}
+    </li>
+    {% endfor %}
+    </ul> 
+</body>
+
+</html>
